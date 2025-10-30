@@ -1,3 +1,3 @@
 ```bash
-  git clone https://github.com/your-username/carbon-meter.git
-  cd carbon-meter
+  git clone https://github.com/Dividzs31/carbon_meter_final.git
+  cd carbon_meter_final
