@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin · Carbon-Meter</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g"
+      crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" />
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <link rel="shortcut icon" href="public/favicon-48x48.ico" />
+  </head>
+
+  <body class="auth-body">
+    <header class="auth-header d-flex justify-content-between align-items-center">
+      <a href="index.html#home" aria-label="Back to Carbon-Meter">
+        <img class="brand-logo" src="public/logo.png" alt="Carbon-Meter Logo" />
+      </a>
+      <a href="customer-area.html" class="btn btn-outline-light btn-sm">
+        <i class="fas fa-arrow-left me-1"></i>Back to customer area
+      </a>
+    </header>
+
+    <main class="customer-shell">
+      <h1 class="auth-title mb-1"><i class="fas fa-user-shield me-2"></i>Admin</h1>
+      <p class="auth-subtitle">All registered customers.</p>
+
+      <div id="accessDenied" class="alert alert-warning d-none" role="alert"></div>
+
+      <div id="customersTableWrap" class="card profile-card d-none mt-3">
+        <div class="card-body p-4">
+          <p class="mb-3">
+            <strong id="customerCount">0</strong> registered customer(s)
+          </p>
+          <div class="table-responsive">
+            <table class="table table-dark table-striped align-middle mb-0">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Joined</th>
+                </tr>
+              </thead>
+              <tbody id="customersTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="src/config.js"></script>
+    <script src="src/auth-api.js"></script>
+    <script src="src/admin.js"></script>
+  </body>
+</html>

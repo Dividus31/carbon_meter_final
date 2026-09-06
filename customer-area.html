@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Area · Carbon-Meter</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g"
+      crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" />
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <link rel="shortcut icon" href="public/favicon-48x48.ico" />
+  </head>
+
+  <body class="auth-body">
+    <header class="auth-header d-flex justify-content-between align-items-center">
+      <a href="index.html#home" aria-label="Back to Carbon-Meter">
+        <img class="brand-logo" src="public/logo.png" alt="Carbon-Meter Logo" />
+      </a>
+      <div class="d-flex gap-2">
+        <a href="admin.html" id="adminLink" class="btn btn-outline-success btn-sm d-none">
+          <i class="fas fa-user-shield me-1"></i>Admin
+        </a>
+        <button type="button" class="btn btn-outline-light btn-sm" id="logoutBtn">
+          <i class="fas fa-sign-out-alt me-1"></i>Log out
+        </button>
+      </div>
+    </header>
+
+    <main class="customer-shell">
+      <h1 class="auth-title mb-1">Welcome, <span id="welcomeName">…</span></h1>
+      <p class="auth-subtitle">This is your private Carbon-Meter customer area.</p>
+
+      <div class="row g-4 mt-1">
+        <!-- Profile -->
+        <div class="col-12 col-md-5">
+          <div class="card profile-card h-100">
+            <div class="card-body p-4">
+              <h2 class="h5 mb-3"><i class="fas fa-id-card me-2"></i>Your profile</h2>
+              <dl class="row mb-0">
+                <dt class="col-5 text-muted">Email</dt>
+                <dd class="col-7" id="profileEmail">…</dd>
+                <dt class="col-5 text-muted">Member since</dt>
+                <dd class="col-7" id="profileMemberSince">…</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tracked countries -->
+        <div class="col-12 col-md-7">
+          <div class="card favorites-card h-100">
+            <div class="card-body p-4">
+              <h2 class="h5 mb-3"><i class="fas fa-globe-europe me-2"></i>Your tracked countries</h2>
+
+              <div id="addFavoriteAlert" class="alert alert-danger d-none py-2" role="alert"></div>
+
+              <form id="addFavoriteForm" class="d-flex gap-2 mb-3">
+                <select id="countrySelect" class="form-select" aria-label="Choose a country to track">
+                </select>
+                <button type="submit" class="btn btn-success text-nowrap">
+                  <i class="fas fa-plus me-1"></i>Add
+                </button>
+              </form>
+
+              <p id="favoritesEmpty" class="text-muted d-none">
+                You're not tracking any countries yet. Add one above.
+              </p>
+              <ul id="favoritesList" class="list-group favorites-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="src/config.js"></script>
+    <script src="src/auth-api.js"></script>
+    <script src="src/countries.js"></script>
+    <script src="src/customer-area.js"></script>
+  </body>
+</html>

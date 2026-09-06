@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in · Carbon-Meter</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g"
+      crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" />
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <link rel="shortcut icon" href="public/favicon-48x48.ico" />
+  </head>
+
+  <body class="auth-body">
+    <header class="auth-header">
+      <a href="index.html#home" aria-label="Back to Carbon-Meter">
+        <img class="brand-logo" src="public/logo.png" alt="Carbon-Meter Logo" />
+      </a>
+    </header>
+
+    <main class="auth-main">
+      <div class="auth-card card">
+        <div class="card-body p-4 p-md-5">
+          <h1 class="auth-title">Welcome back</h1>
+          <p class="auth-subtitle">Log in to access your Carbon-Meter customer area.</p>
+
+          <div id="loginAlert" class="alert alert-danger d-none" role="alert"></div>
+
+          <form id="loginForm" novalidate>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+                autocomplete="email" />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                required
+                minlength="8"
+                autocomplete="current-password" />
+            </div>
+            <button type="submit" class="btn btn-success w-100" id="loginSubmit">
+              Log in
+            </button>
+          </form>
+
+          <p class="auth-switch">Don't have an account? <a href="register.html">Create one</a></p>
+        </div>
+      </div>
+    </main>
+
+    <script src="src/config.js"></script>
+    <script src="src/auth-api.js"></script>
+    <script src="src/login.js"></script>
+  </body>
+</html>

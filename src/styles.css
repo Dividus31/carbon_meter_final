@@ -407,3 +407,115 @@ header {
     max-width: 1200px;
   }
 }
+
+/* =========================
+   Customer Area / Auth pages
+========================= */
+.auth-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #0a0f0a, #1a1a1a);
+  color: #ffffff;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.auth-header {
+  /* Override the global fixed-navbar "header" rule above - on auth pages
+     the header is a normal in-flow element, not an overlay. */
+  position: static;
+  height: auto;
+  backdrop-filter: none;
+  padding: 1.25rem 1.5rem;
+}
+
+.auth-header .brand-logo {
+  height: 3rem;
+}
+
+.auth-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem 4rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: #2b2b2b;
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4);
+}
+
+.auth-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.auth-subtitle {
+  color: #b5b5b5;
+  margin-bottom: 1.5rem;
+}
+
+.auth-switch {
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+  text-align: center;
+  color: #b5b5b5;
+}
+
+.auth-switch a {
+  color: #2ecc40;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+.btn-success {
+  background-color: #13860f;
+  border-color: #13860f;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #0f6b0c;
+  border-color: #0f6b0c;
+}
+
+/* Customer area (protected) page */
+.customer-shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.profile-card {
+  background-color: #2b2b2b;
+  border: none;
+  border-radius: 0.75rem;
+}
+
+.favorites-card {
+  background-color: #2b2b2b;
+  border: none;
+  border-radius: 0.75rem;
+}
+
+.favorite-item {
+  background-color: #1f1f1f;
+  color: #fff;
+  border-color: #3a3a3a;
+}
+
+.favorites-list {
+  max-height: 320px;
+  overflow-y: auto;
+}

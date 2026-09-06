@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
 
     <!-- Custom styles -->
-    <link rel="stylesheet" href="../src/styles.css" />
+    <link rel="stylesheet" href="src/styles.css" />
 
     <!-- fullPage.js -->
     <link
@@ -77,26 +77,26 @@
 
     <title>Carbon-Meter</title>
     <!-- Favicon für alte Browser -->
-    <link rel="shortcut icon" href="../public/favicon.ico" />
+    <link rel="shortcut icon" href="public/favicon-48x48.ico" />
     <!-- Favicon für moderne Browser -->
     <link
       rel="icon"
-      type="image/x-icon"
+      type="image/png"
       sizes="16x16"
-      href="../public/favicon-16x16.ico" />
+      href="public/favicon-16x16.png" />
     <link
       rel="icon"
-      type="image/x-icon"
+      type="image/png"
       sizes="32x32"
-      href="../public/favicon-32x32.ico" />
+      href="public/favicon-32x32.png" />
     <link
       rel="icon"
       type="image/x-icon"
       sizes="48x48"
-      href="../public/favicon-48x48.ico" />
+      href="public/favicon-48x48.ico" />
 
     <!--Apple (iOS) -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../public/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png" />
   </head>
 
   <body>
@@ -113,7 +113,7 @@
 
       <!-- Branding -->
       <div class="text-center py-3 border-bottom">
-        <img src="../public/logo.png" alt="Carbon-Meter Logo" style="max-width: 120px" />
+        <img src="public/logo.png" alt="Carbon-Meter Logo" style="max-width: 120px" />
         <p class="mt-2 mb-0 fw-bold">Carbon-Meter</p>
       </div>
 
@@ -129,6 +129,9 @@
       </a>
       <a href="#contact" class="w3-bar-item w3-button">
         <i class="fas fa-envelope me-2"></i>Contact
+      </a>
+      <a href="login.html" class="w3-bar-item w3-button" data-auth-link="sidebar">
+        <i class="fas fa-user me-2"></i>Customer Login
       </a>
 
       <!-- Zusatzinfos -->
@@ -167,12 +170,12 @@
       <div class="navbar">
         <!-- Menü-Icon (öffnet Sidebar) -->
         <a class="menu-icon" aria-label="Menü" onclick="w3_open()">
-          <img src="../public/navbar-icon.svg" alt="Menü-Icon" />
+          <img src="public/navbar-icon.svg" alt="Menü-Icon" />
         </a>
 
         <!-- ===== Logo / Branding ===== -->
         <a class="brand" href="#home" aria-label="Carbon Meter-Startseite">
-          <img class="brand-logo" src="../public/logo.png" alt="Carbon-Meter Logo" />
+          <img class="brand-logo" src="public/logo.png" alt="Carbon-Meter Logo" />
         </a>
         <!-- ===== Navigation ===== -->
         <nav aria-label="Hauptnavigation">
@@ -180,6 +183,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#stats">Overview</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="login.html" data-auth-link="header">Customer Login</a></li>
           </ul>
         </nav>
       </div>
@@ -260,7 +264,7 @@
       <div class="section home" id="home">
         <video
           class="background-video"
-          src="../public/video.mp4"
+          src="public/video.mp4"
           autoplay
           muted
           loop
@@ -275,7 +279,7 @@
             economies, and a livable future.
           </p>
           <a href="#" data-bs-toggle="modal" data-bs-target="#about">Read More</a>
-          <img class="down-arrow" src="../public/arrow.png" alt="Pfeil nach unten" />
+          <img class="down-arrow" src="public/arrow.png" alt="Pfeil nach unten" />
         </div>
       </div>
 
@@ -402,7 +406,7 @@
                 <div
                   class="d-flex align-items-center justify-content-center mb-4 mx-auto"
                   style="width: 150px; height: 150px">
-                  <img src="../public/logo2.png" height="180" alt="Logo" />
+                  <img src="public/logo2.png" height="180" alt="Logo" />
                 </div>
 
                 <p class="text-center">
@@ -530,6 +534,9 @@
       crossorigin="anonymous"></script>
 
     <!-- Main JavaScript -->
-    <script src="../src/main.js"></script>
+    <script src="src/main.js"></script>
+    <script src="src/config.js"></script>
+    <script src="src/auth-api.js"></script>
+    <script src="src/nav-auth.js"></script>
   </body>
 </html>
