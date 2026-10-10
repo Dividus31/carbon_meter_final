@@ -28,7 +28,7 @@ jobs:
 
 
       - name: Build API-Image
-        run: docker build -t carbon-meter-api ./server
+        run: docker build -t carbon-meter-api .
 
       - name: API start
         run: |
