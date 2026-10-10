@@ -5,10 +5,12 @@
   "main": "src/index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "node --watch src/index.js",
-    "migrate": "node src/migrate.js",
-    "make-admin": "node src/make-admin.js"
+  "start": "node src/index.js",
+  "dev": "node --watch src/index.js",
+  "migrate": "node src/migrate.js",
+  "make-admin": "node src/make-admin.js",
+  "test": "node --test"
+
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
