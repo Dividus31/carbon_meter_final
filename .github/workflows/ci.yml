@@ -55,5 +55,7 @@ jobs:
           exit 1
 
 
-      - name: Run Tests
+      - name: Automatisierte Tests ausführen
         run: npm test
+        env:
+          API_BASE_URL: http://localhost:3000
