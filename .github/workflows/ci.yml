@@ -54,15 +54,6 @@ jobs:
           docker logs carbon-meter-api
           exit 1
 
-      - name: Debug API connection
-        run: |
-          echo "Testing API from runner..."
-          curl -v http://127.0.0.1:3000/api/health
-          echo "Container status:"
-          docker ps -a
-          echo "Container logs:"
-          docker logs carbon-meter-api
-
       - name: Run automated tests
         run: npm test
         env:
