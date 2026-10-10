@@ -25,5 +25,35 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+
+
+      - name: Build API-Image
+        run: docker build -t carbon-meter-api ./server
+
+      - name: API start
+        run: |
+          docker run -d \
+            --name carbon-meter-api \
+            -p 3000:3000 \
+            -e PORT=3000 \
+            -e NODE_ENV=test \
+            -e DATABASE_URL=postgresql://unused:unused@localhost:5432/unused \
+            -e JWT_SECRET=ci-test-secret \
+            -e CLIENT_ORIGIN=http://localhost:8080 \
+            -e COOKIE_SECURE=false \
+            carbon-meter-api
+
+      - name: Wait for API to be ready
+        run: |
+          for i in {1..15}; do
+            if curl --fail http://localhost:3000/api/health; then
+              exit 0
+            fi
+            sleep 2
+          done
+          docker logs carbon-meter-api
+          exit 1
+
+
       - name: Run Tests
         run: npm test
