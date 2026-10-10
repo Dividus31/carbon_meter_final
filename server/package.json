@@ -5,12 +5,11 @@
   "main": "src/index.js",
   "type": "commonjs",
   "scripts": {
-  "start": "node src/index.js",
-  "dev": "node --watch src/index.js",
-  "migrate": "node src/migrate.js",
-  "make-admin": "node src/make-admin.js",
-  "test": "node --test"
-
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "migrate": "node src/migrate.js",
+    "make-admin": "node src/make-admin.js",
+    "test": "c8 --reporter=text --reporter=lcov node --test"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -21,5 +20,8 @@
     "express-rate-limit": "^7.4.0",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "c8": "^12.0.0"
   }
 }
